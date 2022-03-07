@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import Expenses from './components/Expense/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
@@ -24,11 +25,16 @@ const App = () => {
       'date':new Date(2021, 7,12)
     }
   ]
-
+  const getSubmittedForm = (data) =>{
+    console.log("on APP.JS");
+    console.log(data);
+    
+  
+  }
 
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onSaveExpenseData={getSubmittedForm} />
       <Expenses item={expenses}></Expenses>
     </div>
   );
